@@ -31,5 +31,5 @@ var maximumProduct = function (nums) {
 
     return Math.max(max1*max2*max3, min1*min2*max1)
 };
-
+//check is github is setup
 console.log(maximumProduct([1,2,3]))
