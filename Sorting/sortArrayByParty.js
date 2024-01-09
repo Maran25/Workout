@@ -44,3 +44,4 @@ var sortArrayByParityII = function(nums) {
 };
 
 console.log(sortArrayByParityII([2,3,1,1,4,0,0,4,3,3]))
+console.log(sortArrayByParity([3, 2, 1, 4]))
