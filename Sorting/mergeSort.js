@@ -102,7 +102,7 @@
 
 // // console.log(mergeTwoSortedArray([1, 5, 7, 9], [6, 9, 20, 48]));
 // console.log(mergeSort([3, 4, 6, 2, 42, 12, 6, 3, 5]))
-
+//In place merge sort
 function mergeSort(arr, start, end) {
   if(end - start === 1) return;
 
