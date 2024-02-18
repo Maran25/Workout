@@ -118,15 +118,85 @@ class SinglyLinkedlist {
             
         }
     }
+
+    deleteDuplicates() {
+        let temp = this.head;
+    
+        while(!temp.next) {
+            if(temp.val === temp.next.val) {
+                const deleteNode = temp.next;
+                temp.next = deleteNode.next;
+            } else {
+                temp = temp.next
+            }
+        }
+    
+        return head
+    };
 }
 
-let list = new SinglyLinkedlist();
-list.push(20)
-list.push(21)
-list.push(22)
-list.push(32)
-list.push(52)
-list.push(64)
-list.push(128)
-console.log(list.delete(3))
-console.log(list.get(3))
+let listOne = new SinglyLinkedlist();
+listOne.push(1)
+// listOne.push(5)
+// listOne.push(6)
+listOne.push(2)
+
+let listTwo = new SinglyLinkedlist();
+listTwo.push(7)
+listTwo.push(7)
+listTwo.push(7)
+listTwo.push(7)
+// listTwo.push(4)
+// listTwo.push(7)
+// listTwo.push(7)
+// listTwo.push(7)
+// listTwo.push(7)
+// listTwo.push(5)
+// listTwo.push(6)
+
+function ListNode(val, next) {
+   this.val = (val===undefined ? 0 : val)
+   this.next = (next===undefined ? null : next)
+}
+
+var mergeTwoSortedList = function (list1, list2) {
+    let dummy = new ListNode();
+    let result = dummy;
+
+    while (list1 !== null && list2 !== null) {
+        if (list1.val > list2.val) {
+            result.next = new ListNode(list2.val);
+            list2 = list2.next;
+        } else {
+            result.next = new ListNode(list1.val);
+            list1 = list1.next;
+        }
+        result = result.next;
+    }
+
+    result.next = list1 ? list1 : list2
+
+    return dummy.next;
+};
+
+// console.log(mergeTwoSortedList(listOne.head, listTwo.head))
+// console.log(list.delete(3))
+// console.log(list.get(3))
+
+var removeElements = function (head, val) {
+    let cur = head;
+    if(!cur) return head;
+
+    while (cur) {
+        if (cur && cur.next && cur.next.val === val) {
+            let temp = cur.next;
+            while(temp && temp.val === val) temp = temp.next;
+            cur.next = temp;
+        } else {
+            cur = cur.next;
+        }
+    }
+    return head;
+};
+
+console.log(removeElements(listTwo.head, 7))

@@ -1,6 +1,6 @@
-function factorial(num) {
-    if(num === 1) return num;
-    return num * factorial(num-1);
+function sumOfDigit(num) {
+    if(num <= 0) return 0;
+    return num%10 + sumOfDigit(Math.floor(num/10));
 }
 
-console.log(factorial(5));
+console.log(sumOfDigit(1342));
