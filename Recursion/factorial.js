@@ -1,6 +1,6 @@
-function sumOfDigit(num) {
-    if(num <= 0) return 0;
-    return num%10 + sumOfDigit(Math.floor(num/10));
+function fact(num) {
+    if(num === 1) return 1;
+    return num * fact(num-1);
 }
 
-console.log(sumOfDigit(1342));
+console.log(fact(3));
