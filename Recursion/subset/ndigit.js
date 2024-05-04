@@ -3,6 +3,7 @@ function increasingNumbers(N) {
   let first = generateNum(N);
 
   helper(N, first, 2, list);
+  return list;
 }
 
 function helper(N, start, prev, list) {
@@ -30,7 +31,7 @@ function generateNum(n) {
   return ans;
 }
 
-increasingNumbers(2);
+console.log(increasingNumbers(2));
 
 
 // function increasingNumbers(N) {
